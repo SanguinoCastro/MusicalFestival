@@ -1,0 +1,92 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.gallery {
+    @include m.content;
+    background-color: lighten(rgba(v.$negro, 0.9), 5%);
+    padding: 1.5rem;
+    picture {
+        cursor: pointer;
+        transition: all .2s ease-in;
+        img{
+            border-radius: 2rem 0 2rem 0;
+        }
+        &:hover {
+            scale:1.1;
+        }
+    }
+    &-images {
+        @include m.grid(1, 2rem);
+
+        @include m.phone {
+            @include m.grid(2, 2rem);
+
+        }
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+            
+        }
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+            
+        }
+        img {
+            height: 20rem;
+            object-fit: cover;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$negro, 0.9);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in 0.5s;
+
+    &.fade-out {
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img{
+        margin-top: 25%;
+        border: double 0.5rem v.$blanco;
+        max-height: 50rem;
+        object-fit: scale-down;
+        border-radius: 2rem 0 2rem 0;
+        box-shadow: .1rem .2rem 3rem #111111;
+    }
+}
+
+.btn-close {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: darkred;
+    border: none;
+    color: v.$blanco;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

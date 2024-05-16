@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metal & Rock Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   
+   <!-- Della Respira -->
+   <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="build/css/app.css" />
+  </head>
+  <body>
+    <header class="header fixed-nav">
+      <section class="content content__header navegacion-principal">
+        <a href="#video" class="h1">Metal & Rock Festival</a>
+
+        <nav class="navegacion-principal">
+          <a href="#lineup">Line Up</a>
+          |
+          <a href="#gallery">Galería</a>
+          |
+          <a href="#boletos">Entradas</a>
+        </nav>
+      </section>
+    </header>
+
+    <div class="video" id="video">
+      <div class="overlay">
+        <div class="content content-video">
+          <h2>Metal & Rock Festival</h2>
+          <p>Abril 2025, CDMX, México</p>
+        </div>
+      </div>
+      <video autoplay muted loop>
+        <source src="video/rock.mp4" type="video/mp4" />
+        <source src="video/rock.ogv" type="video/ogg" />
+        <source src="video/rock.webm" type="video/webm" />
+      </video>
+    </div>
+
+    <section class="about-festival">
+      <div class="imagen">
+        <picture>
+          <source srcset="build/img/freakgod2.avif" type="image/avif" />
+          <source srcset="build/img/freakgod2.webp" type="image/webp" />
+          <img
+            width="300"
+            height="200"
+            loading="lazy"
+            src="build/img/freakgod2.jpg"
+            alt="FreakGod Ulises"
+          />
+        </picture>
+      </div>
+
+      <div class="content-festival">
+        <h2>Metal & Rock Festival</h2>
+        <p class="fecha">Abril 2025, CDMX, México</p>
+        <p>
+          ¡Prepárate para sumergirte en la potencia del Metal & Rock Festival!
+          Desde la oscuridad del death metal de FreakGod hasta la energía y la
+          actitud del rock folk de Venado Meraki, este festival te llevará en un
+          viaje musical único e inolvidable. <br />Abril de 2025, CDMX, México.
+        </p>
+      </div>
+    </section>
+
+    <section id="lineup" class="lineup">
+      <h3>Line Up</h3>
+      <p class="dia">Viernes 25</p>
+      <div class="escenarios-content">
+        <div class="escenario bg-yellow">
+          <p class="nombre-escenario">Metal</p>
+
+          <ul class="calendar">
+            <li>17:00 | <span>FreakGod</span></li>
+            <li>18:00 | <span>Sweet Sinner</span></li>
+            <li>19:00 | <span>Soundog</span></li>
+            <li>20:00 | <span>Mexicalrish</span></li>
+            <li>22:00 | <span>Weirwood</span></li>
+            <li>24:00 | <span>FreakGod</span></li>
+          </ul>
+        </div>
+        <!--.escenario-->
+
+        <div class="escenario bg-green">
+          <p class="nombre-escenario">Rock</p>
+
+          <ul class="calendar">
+            <li>17:00 | <span>Venado Meraki</span></li>
+            <li>18:00 | <span>Remus</span></li>
+            <li>19:00 | <span>Agris</span></li>
+            <li>20:00 | <span>Ter-Cero</span></li>
+            <li>22:00 | <span>Venado Meraki</span></li>
+            <li>24:00 | <span>Herbolaria</span></li>
+          </ul>
+        </div>
+        <!--.escenario-->
+      </div>
+      <!--.escenarios-content-->
+
+      <p class="dia">Sábado 26</p>
+      <div class="escenarios-content content">
+        <div class="escenario bg-green">
+          <p class="nombre-escenario">Metal</p>
+
+          <ul class="calendar">
+            <li>17:00 | <span>FreakGod</span></li>
+            <li>18:00 | <span>X-00 K'ol</span></li>
+            <li>19:00 | <span>Rvins</span></li>
+            <li>20:00 | <span>Luziard</span></li>
+            <li>22:00 | <span>FreakGod</span></li>
+            <li>24:00 | <span>Death letters</span></li>
+          </ul>
+        </div>
+        <!--.escenario-->
+
+        <div class="escenario bg-yellow">
+          <p class="nombre-escenario">Rock</p>
+
+          <ul class="calendar">
+            <li>17:00 | <span>Venado Meraki</span></li>
+            <li>18:00 | <span>Miss Neurosis</span></li>
+            <li>19:00 | <span>Deepknotik</span></li>
+            <li>20:00 | <span>Costa Felina</span></li>
+            <li>22:00 | <span>Lunaem</span></li>
+            <li>24:00 | <span>Venado Meraki</span></li>
+          </ul>
+        </div>
+        <!--.escenario-->
+      </div>
+      <!--.escenarios-contenedor -->
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h3>Galería</h3>
+
+      <div class="gallery-images"></div>
+    </section>
+
+    <section id="boletos" class="content-boletos">
+      <h3>Boletos</h3>
+
+      <div class="boletos">
+        <div class="pase">
+          <p class="pase-name">Pase 1 Día</p>
+          <header class="pase-header">
+            <p>Incluye</p>
+          </header>
+          <div class="pase-body">
+            <ul>
+              <li> <img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/acceso.svg" alt="Entradas">Acceso a ambos escenarios</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/drink.svg" alt="Entradas">Bebida Ilimitada</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/playera.svg" alt="Entradas">Playera / Pulsera del Evento</li>
+            </ul>
+          </div>
+          <footer class="pase-footer">
+            <p>$100</p>
+          </footer>
+        </div>
+        <div class="pase">
+          <p class="pase-name">Pase 2 Días</p>
+          <header class="pase-header">
+            <p>Incluye</p>
+          </header>
+          <div class="pase-body">
+            <ul>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/acceso.svg" alt="Entradas">Acceso a ambos escenarios</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/drink.svg" alt="Entradas">Bebida Ilimitada</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/playera.svg" alt="Entradas">Playera / Pulsera del Evento</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/vip.svg" alt="Entradas">Acceso VIP</li>
+              <li><img loading="lazy" width="10" height="10" class="icon" src="build/img/gallery/icon/sorteo.svg" alt="Entradas">Participación sorteo doble meet & greet</li>
+            </ul>
+          </div>
+          <footer class="pase-footer">
+            <p>$185</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <div class="toUp">
+      <a href="#video">
+        <picture>
+          <source srcset="build/img/gallery/icon/guitard.avif" type="image/avif" />
+          <source srcset="build/img/gallery/icon/guitard.webp" type="image/webp" />
+          <img
+            width="100"
+            height="100"
+            loading="lazy"
+            src="build/img/gallery/icon/guitard.png"
+            alt="Volver al inicio"
+          /></a>
+    </div>
+
+    <footer class="footer">
+      <p>Metal & Rock Festival 2025. Todos los derechos reservados</p>
+    </footer>
+
+    <script src="build/js/app.js"></script>
+  </body>
+</html>

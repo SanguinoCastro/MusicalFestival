@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;
+    min-height: 50rem;
+    max-height: 70rem;
+    overflow: hidden;
+    .overlay{
+        position: absolute;
+        background: linear-gradient(
+            270deg,
+            rgba(red, 50%),
+            rgba(darken(darkred, 20%), 90%)
+        );
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        @include m.desktop{
+            margin-top: 0rem;
+            height: 100%;
+        }
+    }
+
+    video{
+        display: inline-block;
+        width: auto;
+        // margin-top: -5rem;
+        margin-left: -40rem;
+        @include m.tabletXL{
+            width: 150%;
+            margin-top: -4rem;
+        }
+        @include m.desktopS{
+            margin-top: -15rem;
+        }
+        @include m.desktop{
+            height: auto;
+            width: 105%;
+            margin-top: 0rem;
+            margin-left: 0rem;
+        }
+        @include m.desktopXL{
+            width: 110%;
+            margin-top: -15rem;
+        }
+        @include m.desktop3XL{
+            margin-top: -30rem;
+        }
+        // @include m.ph
+    }
+}
+
+.content-video{
+    z-index: 10;
+
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+    p{
+        background-color: v.$negro;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0;
+        border-radius: 0 2rem 0 2rem;
+    }
+
+}

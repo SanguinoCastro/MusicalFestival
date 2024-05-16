@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.about-festival{
+    @include m.content;
+    @include m.tablet{
+        @include m.grid(2);
+    }
+
+    img {
+        filter: hue-rotate(95deg) brightness(1.5);
+        border-radius: 0 2rem 0 2rem;
+    }
+}
+
+.content-festival {
+    margin-top: 5rem;
+
+    h2{
+        margin-bottom: 2rem;
+    }
+    p{
+        font-weight: 500;
+    }
+    .fecha{
+        color: lighten(v.$rosa, 20%);
+        font-weight: 700;
+    }
+}

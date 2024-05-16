@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+
+.toUp {
+    display: none;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    background-color: v.$rosa;
+    width: 5rem;
+    height: 5rem;
+    z-index: 1000;
+    border: .1rem solid v.$blanco;
+    border-radius: 50%;
+    padding: 1rem;
+    transition: scale .3s ease-in-out;
+    &:hover {
+        scale:0.8;
+        background-color: darken(v.$rosa, 10%);
+        a{
+            scale: 2;
+            filter: drop-shadow(0 0 .3rem lighten(v.$morado, 30%));
+        }
+    }
+    a {
+        transform: rotate(315deg);
+        color: v.$blanco;
+        animation-name: bounce;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+        transition: scale .3s ease-in-out;
+        
+        
+        @keyframes bounce {
+            0% {
+                translate: 0 .3rem;
+            }
+            50% {
+                translate: 0 -.3rem;
+            }
+            100% {
+                translate: 0 .3rem;
+            }
+        }
+    }
+    
+}
+
+.fixed-toUp{
+    display: grid;
+    place-items: center;
+}
