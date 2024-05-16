@@ -1,6 +1,8 @@
 # Festival Musical Ficticio "Heavy & Rock Festival"
 
-Este proyecto es una página web desarrollada para practicar lo aprendido en el curso de Udemy impartido por el profesor Juan de la Torre. La página representa un festival musical ficticio de heavy y rock del ámbito mexicano, llamado Heavy & Rock Festival.
+Este proyecto es una página web desarrollada para practicar lo aprendido en el curso de Udemy impartido por el profesor Juan de la Torre. La página representa un festival musical ficticio de heavy y rock del ámbito mexicano, llamado Heavy & Rock Festival.  
+[visitar la web](https://sanguinocastro.github.io/MusicalFestival/)
+
 
 ## Tecnologías Utilizadas
 
