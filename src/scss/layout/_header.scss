@@ -39,8 +39,14 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    span {
+        display: none;
+    }
     @include m.tablet{
         flex-direction: row;
+        span {
+            display: inline;
+        }
     }
     a{
         color: v.$blanco;
