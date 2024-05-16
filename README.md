@@ -18,14 +18,14 @@ La página web del festival Heavy & Rock Festival incluye diversas secciones com
 
 1. Clona este repositorio.
    ```bash
-   git clone https://github.com/tu-usuario/tu-proyecto.git```
+   git clone https://github.com/tu-usuario/tu-proyecto.git
 2. Instala las dependencias.
     ```bash
     cd tu-proyecto
-    npm install ``
+    npm install 
 3. Ejecuta Gulp para copilar los archivos de SaSS y lazar el servidor de desarrollo.
 4.  ```bash
-    npm run dev```
+    npm run dev
 
 ## Uso
 Abre tu navegador y visita la dirección proporcionada por Gulp (generalmente http://localhost:3000) para ver la página web del festival musical.
@@ -37,9 +37,9 @@ Me he inspirado en su diseño y lo he modificado a mi gusto.
 ## Contacto
 Si tienes alguna pregunta o comentario, no dudes en contactarme:
 
-· Email: eduardsanguinodev@gmail.com
-· Linkedin: https://www.linkedin.com/in/eduard-sanguino-castro/
-· Web: https://eduardsanguinodev.com
+- Email: eduardsanguinodev@gmail.com
+- Linkedin: https://www.linkedin.com/in/eduard-sanguino-castro/
+- Web: https://eduardsanguinodev.com
 
 ## Licencia
 
