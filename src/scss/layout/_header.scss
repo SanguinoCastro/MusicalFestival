@@ -44,7 +44,7 @@
     }
     @include m.tablet{
         flex-direction: row;
-        span {
+        span.visible {
             display: inline;
         }
     }
