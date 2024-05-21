@@ -19,7 +19,7 @@ function fixedToUp() {
 }
 
 const CANTIDAD_IMAGENES = 16;
-const IMAGENES_POR_PAGINA = 6;
+const IMAGENES_POR_PAGINA = 4;
 let paginaActual = 1;
 let isDesktopView = window.matchMedia('(min-width: 767px)').matches;
 
