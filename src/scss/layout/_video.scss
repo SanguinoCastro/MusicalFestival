@@ -54,21 +54,35 @@
 
 .content-video{
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.tablet{
+        align-items: flex-start;
+    }
 
     h2{
         color: v.$blanco;
-        font-size: 7rem;
         margin: 0;
+        text-align: center;
+        font-size: 5rem;
+        @include m.phone{
+        font-size: 7rem;
+        }
     }
     p{
         background-color: v.$negro;
         display: inline-block;
         padding: 1rem 2rem;
         color: v.$blanco;
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         font-weight: 700;
         margin: 0;
         border-radius: 0 2rem 0 2rem;
+        text-align: center;
+        @include m.phone{
+            font-size: 2.4rem;
+            }
     }
 
 }
