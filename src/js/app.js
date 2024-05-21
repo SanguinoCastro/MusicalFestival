@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
   scrollNav();
   scrollToUP();
 });
+const toUp = document.querySelector('.toUp');
 
 function fixedToUp() {
-  const toUp = document.querySelector('.toUp');
   const aboutFestival = document.querySelector('.about-festival');
   window.addEventListener('scroll', function () {
     if (aboutFestival.getBoundingClientRect().top < 1) {
@@ -63,6 +63,7 @@ function showImage(i) {
 
   //   Agregar al HTML
   const body = document.querySelector('body');
+  toUp.classList.remove('fixed-toUp');
   body.classList.add('overflow-hidden');
   body.appendChild(modal);
 }
@@ -75,6 +76,7 @@ function closeModal() {
     modal?.remove();
     const body = document.querySelector('body');
     body.classList.remove('overflow-hidden');
+    toUp.classList.add('fixed-toUp');
     body.style.paddingRight = '';
   }, 400);
 }
