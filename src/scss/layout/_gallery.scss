@@ -37,6 +37,27 @@
     }
 }
 
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 1rem;
+    button {
+        background-color: lighten(rgba(v.$negro, 0.9), 5%);
+        border: none;
+        padding: 0.5rem 1rem;
+        color: v.$blanco;
+        cursor: pointer;
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+    .page-info{
+        margin: 1rem;
+    }
+}
+
 .modal {
     position: fixed;
     inset: 0;
@@ -90,3 +111,4 @@
         opacity: 0;
     }
 }
+

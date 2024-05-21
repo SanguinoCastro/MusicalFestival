@@ -18,19 +18,38 @@ function fixedToUp() {
   });
 }
 
-function createGallery() {
-  const CANTIDAD_IMAGENES = 16;
-  const gallery = document.querySelector('.gallery-images');
+const CANTIDAD_IMAGENES = 16;
+const IMAGENES_POR_PAGINA = 6;
+let paginaActual = 1;
+let isDesktopView = window.matchMedia('(min-width: 767px)').matches;
 
-  for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
+function createGallery() {
+  const paginationControls = document.querySelector('.pagination-controls');
+
+  if (isDesktopView) {
+    mostrarTodasLasImagenes();
+    paginationControls.style.display = 'none';
+  } else {
+    mostrarPagina(paginaActual);
+    actualizarControles();
+    paginationControls.style.display = 'flex';
+  }
+}
+
+function mostrarPagina(pagina) {
+  const gallery = document.querySelector('.gallery-images');
+  gallery.innerHTML = '';
+  const inicio = (pagina - 1) * IMAGENES_POR_PAGINA + 1;
+  const fin = Math.min(inicio + IMAGENES_POR_PAGINA - 1, CANTIDAD_IMAGENES);
+
+  for (let i = inicio; i <= fin; i++) {
     const image = document.createElement('PICTURE');
     image.innerHTML = `
-    <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
-    <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
-    <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
-`;
+      <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+      <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+      <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
+    `;
 
-    //   Event Handler
     image.onclick = function () {
       showImage(i);
     };
@@ -38,6 +57,87 @@ function createGallery() {
     gallery.appendChild(image);
   }
 }
+
+function mostrarTodasLasImagenes() {
+  const gallery = document.querySelector('.gallery-images');
+  gallery.innerHTML = '';
+
+  for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
+    const image = document.createElement('PICTURE');
+    image.innerHTML = `
+      <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+      <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+      <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
+    `;
+
+    image.onclick = function () {
+      showImage(i);
+    };
+
+    gallery.appendChild(image);
+  }
+}
+
+function actualizarControles() {
+  const prevButton = document.querySelector('.prev-page');
+  const nextButton = document.querySelector('.next-page');
+  const pageInfo = document.querySelector('.page-info');
+
+  prevButton.disabled = paginaActual === 1;
+  nextButton.disabled =
+    paginaActual === Math.ceil(CANTIDAD_IMAGENES / IMAGENES_POR_PAGINA);
+  pageInfo.textContent = `Página ${paginaActual} de ${Math.ceil(
+    CANTIDAD_IMAGENES / IMAGENES_POR_PAGINA
+  )}`;
+}
+
+document.querySelector('.prev-page').onclick = function () {
+  if (paginaActual > 1) {
+    paginaActual--;
+    createGallery();
+  }
+};
+
+document.querySelector('.next-page').onclick = function () {
+  if (paginaActual < Math.ceil(CANTIDAD_IMAGENES / IMAGENES_POR_PAGINA)) {
+    paginaActual++;
+    createGallery();
+  }
+};
+
+// Escuchar cambios en el tamaño de la ventana para ajustar la galería
+const mediaQuery = window.matchMedia('(min-width: 767px)');
+mediaQuery.addEventListener('change', handleTabletChange);
+
+function handleTabletChange(e) {
+  isDesktopView = e.matches;
+  createGallery();
+}
+
+createGallery();
+
+// function createGallery() {
+//   const gallery = document.querySelector('.gallery-images');
+//   const CANTIDAD_IMAGENES = 16;
+//   const IMAGENES_POR_PAGINA = 4;
+//   let paginaActual = 1;
+
+//   for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
+//     const image = document.createElement('PICTURE');
+//     image.innerHTML = `
+//     <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+//     <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+//     <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
+// `;
+
+//     //   Event Handler
+//     image.onclick = function () {
+//       showImage(i);
+//     };
+
+//     gallery.appendChild(image);
+//   }
+// }
 
 function showImage(i) {
   const image = document.createElement('PICTURE');
