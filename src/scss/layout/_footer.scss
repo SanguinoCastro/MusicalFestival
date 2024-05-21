@@ -1,4 +1,5 @@
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 
 .footer {
     background-color: lighten(darkslateblue, 15%);
@@ -11,6 +12,9 @@
         &.flex{
             gap: 0.5rem;
 
+        }
+        @include m.tablet{
+            font-size: 3rem;
         }
         
     }
