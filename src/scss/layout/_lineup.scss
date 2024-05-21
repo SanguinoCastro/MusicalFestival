@@ -12,21 +12,36 @@
         font-size: 3rem;
         text-transform: uppercase;
     }
+    
 }
 
 .escenarios-content{
     @include m.content;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
     @include m.tablet{
         @include m.grid(2);
     }  
 }
 .escenario{
     padding-top: 2rem;
+    width: 95%;
+    @include m.phone{
+        width: 80%;
+
+    }
+    @include m.tablet{
+        width: 100%;
+    }
+    
     .nombre-escenario{
         font-size: 3rem;
         font-weight: 900;
         text-transform: uppercase;
         text-align: center;
+        
     }
 }
 
