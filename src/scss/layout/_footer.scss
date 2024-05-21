@@ -4,17 +4,26 @@
     background-color: lighten(darkslateblue, 15%);
     padding: 2rem 0;
     p {
+        font-size: 1.6rem;
         margin: 0;
         color: v.$blanco;
         text-align: center;
         &.flex{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            a img{
-                width: 3.4rem;
-            }
+            gap: 0.5rem;
+
+        }
+        
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a img{
+            width: 5rem;
+            margin-bottom: -2rem;
+        }
+        a{
+            color: v.$blanco;
         }
     }
 }

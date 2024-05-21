@@ -17,8 +17,10 @@
 
 .pase {
     transition: transform .3s ease-in-out;
-    &:hover {
-        transform: scale(1.1);
+    @include m.tablet{
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &-name {
