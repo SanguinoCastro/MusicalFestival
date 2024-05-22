@@ -86,7 +86,7 @@ function actualizarControles() {
   prevButton.disabled = paginaActual === 1;
   nextButton.disabled =
     paginaActual === Math.ceil(CANTIDAD_IMAGENES / IMAGENES_POR_PAGINA);
-  pageInfo.textContent = `Página ${paginaActual} de ${Math.ceil(
+  pageInfo.textContent = `${paginaActual} de ${Math.ceil(
     CANTIDAD_IMAGENES / IMAGENES_POR_PAGINA
   )}`;
 }
