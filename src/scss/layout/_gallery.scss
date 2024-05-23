@@ -4,7 +4,7 @@
 .gallery {
     @include m.content;
     background-color: lighten(rgba(v.$negro, 0.9), 5%);
-    padding: 1.5rem;
+    padding: 5rem;
     picture {
         cursor: pointer;
         transition: all .2s ease-in;
@@ -31,6 +31,7 @@
             
         }
         img {
+            border: 1px solid v.$blanco;
             height: 20rem;
             object-fit: cover;
         }

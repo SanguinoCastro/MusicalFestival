@@ -3,7 +3,7 @@
 
 .header {
     background-color: lighten(darkslateblue, 15%);
-
+    
     @include m.tablet{
         &.fixed-nav{
             position: fixed;
@@ -34,13 +34,21 @@
     }
 }
 
-.navegacion-principal{
+.navegacion-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     span.visible {
         display: none;
+    }
+    &-nav {
+        display: none;
+        @include m.tablet{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
     }
     @include m.tablet{
         flex-direction: row;
@@ -56,6 +64,95 @@
             transition: color 300ms ease-in-out;
             color: lighten(v.$rosa, 30%);
         }
+    }
+}
+
+.navegacion-mobile{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    right: 0rem;
+    top: 14.5rem;
+    padding: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: v.$morado;
+    border: 0.1rem solid darken(v.$morado, 40%);
+    border-right: 0;
+    border-radius: 0.6rem 0 0 0.6rem;
+    transition: transform .1s ease-in-out;
+    &.visible {
+        transform: translateX(-12.8rem) ;
+    }
+    button{
+        background-color: v.$morado;
+        border: none;
+        transition: transform .3s ease-in-out;
+        .icon {
+            rotate: 270deg;
+            width: 80%;
+            margin-left: 0.1rem;
+            animation-name: left-right;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            transition: transform .3s ease-in-out;        
+        
+            @keyframes left-right {
+                0% {
+                    translate: .3rem 0;
+                }
+                50% {
+                    translate: -.3rem 0;
+                }
+                100% {
+                    translate: .3rem 0;
+             }
+            }
+        }
+        &.active {
+                display: grid;
+                z-index: 550;
+                border-radius: 0.6rem 0 0 0.6rem;
+                .icon{
+                    transform: rotate(180deg);
+                }
+        }
+        
+    }
+    .nav-aside{
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 0.6rem 0 0 0.6rem ;
+        position: absolute;
+        background-color: v.$morado;
+        border: 0.1rem solid darken(v.$morado, 40%);
+        border-right: 0;
+        width: 31rem;
+        margin-right: -8rem;
+        transform: translateX(45.5%);
+        transition: transform .3s ease-in-out;
+        &.visible {
+            // display: grid;
+            transform: translateX(42%);
+        }
+       
+
+    }
+    @include m.tablet{
+        display: none;
+    }
+}
+
+
+img.home{
+    width: 3rem;
+    margin-left: 2.5rem;
+    transition: opacity 0s ease-in-out;
+    &-hover{
+        opacity: 0;
     }
 }
 

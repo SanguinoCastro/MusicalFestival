@@ -33,4 +33,10 @@
             color: v.$blanco;
         }
     }
+    .link-portfolio{
+        text-decoration: underline;
+        &:hover{
+            color: lighten(v.$rosa, 40%);
+        }
+    }
 }

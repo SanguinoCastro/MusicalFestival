@@ -2,6 +2,7 @@
 @use 'base/mixins' as m;
 
 .content-boletos{
+    padding: 5rem 0;
     background-color: darken(darkslateblue, 15%);
     h3{
         color: v.$blanco;

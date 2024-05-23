@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   highlightLinks();
   scrollNav();
   scrollToUP();
+  setupMenuToggle();
+  setupHomeIconHover();
 });
 const toUp = document.querySelector('.toUp');
 
@@ -15,6 +17,48 @@ function fixedToUp() {
     } else {
       toUp.classList.remove('fixed-toUp');
     }
+  });
+}
+
+function setupMenuToggle() {
+  const menuButton = document.querySelector('.navegacion-mobile button');
+  const navMobile = document.querySelector('.navegacion-mobile');
+  const navAside = document.querySelector('.nav-aside');
+
+  menuButton.addEventListener('click', function () {
+    if (menuButton.classList.contains('active')) {
+      menuButton.classList.remove('active');
+      navAside.classList.remove('visible');
+      navMobile.classList.remove('visible');
+    } else {
+      menuButton.classList.add('active');
+      navAside.classList.add('visible');
+      navMobile.classList.add('visible');
+    }
+  });
+}
+
+function setupHomeIconHover() {
+  const homeIcon = document.querySelector('.home');
+  const originalSrc = 'build/img/gallery/icon/home.svg';
+  const hoverSrc = 'build/img/gallery/icon/home-hover.svg';
+
+  homeIcon.addEventListener('mouseenter', function () {
+    homeIcon.style.transition = 'opacity 0.3s ease';
+    homeIcon.style.opacity = '0';
+    setTimeout(() => {
+      homeIcon.src = hoverSrc;
+      homeIcon.style.opacity = '1';
+    }, 100);
+  });
+
+  homeIcon.addEventListener('mouseleave', function () {
+    homeIcon.style.transition = 'opacity 0.3s ease';
+    homeIcon.style.opacity = '0';
+    setTimeout(() => {
+      homeIcon.src = originalSrc;
+      homeIcon.style.opacity = '1';
+    }, 100);
   });
 }
 
@@ -65,7 +109,7 @@ function mostrarTodasLasImagenes() {
   for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
     const image = document.createElement('PICTURE');
     image.innerHTML = `
-      <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+      <source srcset="build/img/gallery/thumb/${i}-mini.avif" type="image/avif">
       <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
       <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
     `;
@@ -115,29 +159,6 @@ function handleTabletChange(e) {
 }
 
 createGallery();
-
-// function createGallery() {
-//   const gallery = document.querySelector('.gallery-images');
-//   const CANTIDAD_IMAGENES = 16;
-//   const IMAGENES_POR_PAGINA = 4;
-//   let paginaActual = 1;
-
-//   for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
-//     const image = document.createElement('PICTURE');
-//     image.innerHTML = `
-//     <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
-//     <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
-//     <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galería">
-// `;
-
-//     //   Event Handler
-//     image.onclick = function () {
-//       showImage(i);
-//     };
-
-//     gallery.appendChild(image);
-//   }
-// }
 
 function showImage(i) {
   const image = document.createElement('PICTURE');
@@ -224,7 +245,7 @@ function scrollToUP() {
 
   toUp.addEventListener('click', (e) => {
     e.preventDefault();
-    const toUpHref = document.querySelector('#video');
+    const toUpHref = document.querySelector('#toUp');
     toUpHref.scrollIntoView({ behavior: 'smooth' });
   });
 }

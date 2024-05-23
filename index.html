@@ -14,18 +14,31 @@
 
     <link rel="stylesheet" href="build/css/app.css" />
   </head>
-  <body>
+  
+    <span id="toUp"></span>
     <header class="header fixed-nav">
       <section class="content content__header navegacion-principal">
-        <a href="#video" class="h1">Metal & Rock Festival</a>
+        <a href="#body" class="h1">Metal & Rock Festival</a>
 
-        <nav class="navegacion-principal">
+        <nav class="navegacion-principal-nav">
           <a href="#lineup">Line Up</a>
           <span class="visible">|</span>
           <a href="#gallery">Galería</a>
           <span class="visible">|</span>
           <a href="#boletos">Entradas</a>
         </nav>
+        <aside class="navegacion-mobile">
+          <button><img class="icon" src="build/img/gallery/icon/menu.png" alt="menú"></button>
+          <nav class="nav-aside">
+            <a href="#toUp" class="flex"><img class="home" href="#toUp" src="build/img/gallery/icon/home.svg" alt="Home"></a>
+          <span class="visible">|</span>
+            <a href="#lineup">Line Up</a>
+          <span class="visible">|</span>
+          <a href="#gallery">Galería</a>
+          <span class="visible">|</span>
+          <a href="#boletos">Entradas</a>
+          </nav>
+        </aside>
       </section>
     </header>
 
@@ -190,7 +203,7 @@
     </section>
 
     <div class="toUp">
-      <a href="#video">
+      <a href="#toUp">
         <picture>
           <source srcset="build/img/gallery/icon/guitard.avif" type="image/avif" />
           <source srcset="build/img/gallery/icon/guitard.webp" type="image/webp" />
@@ -205,7 +218,7 @@
 
     <footer class="footer">
       <p>Metal & Rock Festival 2025. Todos los derechos reservados</p>
-      <p class="flex">Web realizada por <a href="https://eduardsanguinodev.com" class="flex">Eduard Sanguino Dev</a></p>
+      <p class="flex">Web realizada por <a href="https://eduardsanguinodev.com" class="flex link-portfolio">Eduard Sanguino Dev</a></p>
       <p class="flex"><a href="https://eduardsanguinodev.com" class="flex"><img src="build/img/gallery/icon/es.svg" alt="ES" class="icon"> </a></p>
     </footer>
 
